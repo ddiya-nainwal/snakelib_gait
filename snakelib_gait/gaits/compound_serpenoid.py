@@ -1,7 +1,10 @@
 import numpy as np
 
+from .shape import Shape
 
-def serpenoid(phase, n, offset, amplitude,
+
+def serpenoid(
+        phase, n, offset, amplitude,
         spatial_frequency, time_frequency, phase_shift):
     """Generate a single-backbone sinusoidal curve.
 
@@ -63,20 +66,21 @@ def compound_serpenoid(
             Phase offset added to the second backbone curve.
 
     Returns:
-        Joint angles array of length n_modules.
+        Shape object representing the joint angles
     """
     if isinstance(n_modules, int):
         n = np.arange(n_modules, dtype=float)
     else:
         n = np.asarray(n_modules)
+    backbones = []
     for i in range(2):
-        n[i::2] = serpenoid(
+        backbones.append(serpenoid(
             phase,
-            n[i::2],
+            n,
             offsets[i],
             amplitudes[i],
             spatial_frequencies[i],
             time_frequencies[i],
             phase_shift if i else 0
-        )
-    return n
+        ))
+    return Shape.from_angles(backbones[0], backbones[1])
