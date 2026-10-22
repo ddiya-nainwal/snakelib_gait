@@ -6,7 +6,7 @@ This package contains snake gaits and tools to work with them.
 
 ### General
 
-* [ ] **Compound serpenoid** - Provides a common interface to the basic gait model,
+* [x] **Compound serpenoid** - Provides a common interface to the basic gait model,
   a serpenoid curve (sinusoidal curvature) on each axis.
 * [ ] **Straight** - Sets all joint angles to zero
 

@@ -3,6 +3,8 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import JointState
 
+from .gaits import compound_serpenoid
+
 
 def flip_axes(target_angles: np.ndarray):
     """Flips joint angles to reflect the real snake.
@@ -62,6 +64,13 @@ def main(args=None):
     rclpy.init(args=args)
 
     gaits = {
+        'compound_serpenoid': (compound_serpenoid, {
+            'offsets': [0.1, 0.1],
+            'amplitudes': [0.2, 0.2],
+            'spatial_frequencies': [0.02, 0.02],
+            'time_frequencies': [2 ** 0.5, 0.25],
+            'phase_shift': 0.25,
+        }),
     }
 
     # Initialize the parser
