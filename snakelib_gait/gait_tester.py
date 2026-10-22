@@ -4,6 +4,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import JointState
 
 from .gaits import compound_serpenoid
+from .gaits import sidewind
 
 
 def flip_axes(target_angles: np.ndarray):
@@ -70,6 +71,12 @@ def main(args=None):
             'spatial_frequencies': [0.02, 0.02],
             'time_frequencies': [2 ** 0.5, 0.25],
             'phase_shift': 0.25,
+        }),
+        'sidewind': (sidewind, {
+            'amplitude_h': 0.49,
+            'amplitude_v': 0.38,
+            'spatial_frequency': 0.08,
+            'time_frequency': 5/9,
         }),
     }
 

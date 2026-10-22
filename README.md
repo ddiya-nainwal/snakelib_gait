@@ -21,7 +21,7 @@ This package contains snake gaits and tools to work with them.
 * [ ] **Roll** - This gait forms the snake into a constant arc, and rotates this arc
   about the longitudinal axis of the snake, causing the snake to translate
   laterally across the ground.
-* [ ] **Sidewind** - Sidewinding is a fast, efficient motion that moves the robot
+* [x] **Sidewind** - Sidewinding is a fast, efficient motion that moves the robot
   laterally inspired by biological sidewinders.
 * [ ] **Conical sidewind** - generalizes the basic sidewinding gait and enables the
   robot to turn.
