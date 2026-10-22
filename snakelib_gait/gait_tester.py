@@ -4,6 +4,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import JointState
 
 from .gaits import compound_serpenoid
+from .gaits import helix
 from .gaits import sidewind
 
 
@@ -71,6 +72,11 @@ def main(args=None):
             'spatial_frequencies': [0.02, 0.02],
             'time_frequencies': [2 ** 0.5, 0.25],
             'phase_shift': 0.25,
+        }),
+        'helix': (helix, {
+            'amplitude': 1,
+            'spatial_frequency': 0.01,
+            'time_frequency': 0.25,
         }),
         'sidewind': (sidewind, {
             'amplitude_h': 0.49,
