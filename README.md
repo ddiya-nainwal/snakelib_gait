@@ -37,7 +37,7 @@ This package contains snake gaits and tools to work with them.
 
 ### Pole gaits
 * [x] **Helix** - A helical gait that allows the snake to roll inside and outside poles.
-* [ ] **Helix auto** - A helical gait that intelligently combines pitch and diameter.
+* [x] **Helix auto** - A helical gait that intelligently combines pitch and diameter.
 * [ ] **Spiraling** - Passes a wave through a helical gait that increase the radius
   of the helix in that window, producing an inchworming gait that rotates the
   snake around the pipe axis.
