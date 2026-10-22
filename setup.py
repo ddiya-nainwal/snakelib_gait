@@ -23,5 +23,8 @@ setup(
         ],
     },
     entry_points={
+        'console_scripts': [
+                'gait_tester = snakelib_gait.gait_tester:main',
+        ],
     },
 )
