@@ -86,11 +86,6 @@ class Shape:
         return self[:]
 
     def __getitem__(self, index):
-        if isinstance(index, slice):
-            # Converts all None and negative indices into concrete absolute integers
-            start, stop, step = index.indices(len(self._data))
-            # Use a range-based loop or manual calculation with the absolute integers
-            return (self._data * self._imask).real
         return (self._data[index] * self._imask[index]).real
 
     def __add__(self, other):
