@@ -37,7 +37,7 @@ class Shape:
 
     @property
     def even(self):
-        return self._data.real
+        return self._data.real()
 
     @even.setter
     def even(self, value):
@@ -45,7 +45,7 @@ class Shape:
 
     @property
     def odd(self):
-        return self._data.imag
+        return self._data.imag()
 
     @odd.setter
     def odd(self, value):
