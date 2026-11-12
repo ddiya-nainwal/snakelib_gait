@@ -7,6 +7,7 @@ from .gaits import compound_serpenoid
 from .gaits import helix
 from .gaits import helix_auto
 from .gaits import sidewind
+from .gaits import roll 
 
 
 def flip_axes(target_angles: np.ndarray):
@@ -53,7 +54,10 @@ class GaitTester(Node):
                 'spatial_frequency': 0.08,
                 'time_frequency': 5/9,
             }),
-        }
+            'roll': (roll, {
+                'amplitude': 0.4, 
+                'time_frequency': 0.25,
+        }) }
 
         for gait_name, (_, parameters) in self.gaits.items():
             for param, value in parameters.items():
