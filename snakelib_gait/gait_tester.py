@@ -48,6 +48,12 @@ class GaitTester(Node):
                 'pole_side': 0,
                 'time_frequency': 0.25,
             }),
+            'slither': (slither, {
+                'head_horizontal_amplitude': 0.15,
+                'head_vertical_amplitude': 0.15, 
+                'tail_amplitude': 0.55,
+                'time_frequency': 0.25,
+            }),
             'sidewind': (sidewind, {
                 'amplitude_h': 0.49,
                 'amplitude_v': 0.38,
